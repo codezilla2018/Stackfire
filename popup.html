@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script type='text/javascript' src='https://api.stackexchange.com/js/2.0/all.js'></script>
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Stackfire</h1>
+<button type="button" class="login-button" name="button">Login</button>
+
+<script type='text/javascript'>
+
+$(function(){
+
+SE.init({
+
+    clientId: 12447,
+    key: 'ptRplwVuSVmdx*I3XC*CmQ((',
+
+    channelUrl: 'https://api.stackexchange.com/docs/proxy',
+
+    complete: function(data) {
+        $('#login-button')
+            .removeAttr('disabled')
+            .text('Run Example With Version '+data.version);
+    }
+});
+
+
+$('#login-button').click(function() {
+  
+
+    SE.authenticate({
+        success: function(data) {
+            alert(
+                'User Authorized with account id = ' +
+                data.networkUsers[0].account_id + ', got access token = ' +
+                data.accessToken
+            );
+        },
+        error: function(data) {
+            alert('An error occurred:\n' + data.errorName + '\n' + data.errorMessage);
+        },
+        networkUsers: true
+    });
+});
+});
+</script>
+
+
+  </body>
+</html>

@@ -1,19 +1,24 @@
+
+
 {
 
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "Stackfire",
   "version": "1.0",
 
   "description": "This is a Stackoverflow Firefox Extension",
-
+  "browser_action": {
+    "default_icon": "stack.png",
+    "default_title": "Stackfire",
+    "default_popup": "popup.html"
+  },
   "icons": {
     "48": "stack.png"
   },
 
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
+
     }
   ]
 

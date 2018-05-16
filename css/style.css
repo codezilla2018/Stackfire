@@ -1,0 +1,538 @@
+html {
+  overflow: hidden;
+  margin-right: -8px;
+}
+
+body {
+  color: #000000;
+  width: 450px;
+  min-width: 450px;
+  max-width: 450px;
+  height: 500px;
+  max-height: 500px;
+  min-height: 500px;
+  margin-left: -10px;
+  margin-top: 0px;
+  overflow-x: hidden;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  font-size: 13px;
+}
+
+a, span.a {
+  text-decoration: none;
+  color: #1842B1;
+  cursor: pointer;
+}
+
+span.a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  height: 27px;
+  color: #FFF;
+  float: right;
+  background: transparent;
+  -webkit-appearance: none;
+  padding-bottom: 5px;
+  border: 0px solid black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #888;
+  -webkit-border-radius: 5px;
+}
+
+::-webkit-scrollbar:vertical {
+  background-color: #fff;
+}
+
+#sidebar {
+  background: -webkit-gradient(linear, left bottom, right bottom, from(#DDDDDD), to(#CECECE));
+  border-right: 1px solid #BEBEBE;
+  padding: 10px;
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 14px;
+  height: 1000px;
+  position: fixed;
+  width: 54px;
+  top: 0px;
+}
+
+#profile-pic {
+  height: 49px;
+  width: 49px;
+  margin-bottom: 12px;
+  margin-left: 9px;
+}
+
+#profile-pic img {
+  height: 49px;
+  width: 49px;
+  -webkit-border-radius: 3px;
+  border: 3px solid #FFF;
+  -webkit-box-shadow: 1px 1px 1px #BEBEBE;
+}
+
+#items {
+  margin-top: 0px;
+  margin-left: -30px;
+  list-style: none;
+  margin-right: -10px;
+}
+
+#inbox {
+  list-style: none;
+}
+
+#items li {
+  padding-top: 5px;
+  padding-bottom: 2px;
+  margin-left: -2px;
+  padding-left: 7px;
+  cursor: pointer;
+  height: 53px;
+}
+
+#items li.selected {
+  background-color: #fff;
+  padding-right: 54px;
+  -webkit-box-shadow: -1px 1px 1px #BEBEBE;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+}
+
+#content {
+  width: 395px;
+  background-color: #fff;
+  margin-left: 40px;
+  padding-left: 0px;
+  margin-top: -13px;
+  min-height: 400px;
+}
+
+#error {
+  display: none;
+  width: 100%;
+  padding-left: 11px;
+  padding-right: 9px;
+  margin-left: -11px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #BBC6DA;
+  background: #F5F6FA;
+}
+
+#stream, #wall, #notifications {
+  padding-right: 5px;
+  display: none;
+  list-style: none;
+}
+
+#notifications, #wall, #inbox, #fb-temp {
+  display: none;
+}
+
+#stream > li, #wall > li, #notifications > li, #inbox > li {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 6px;
+  word-wrap: break-word;
+}
+
+.pic {
+  float: left;
+}
+
+.pic .mini {
+  padding-left: 35px;
+}
+
+.story {
+  padding-left: 5px;
+}
+
+.post {
+  margin-left: 55px;
+  padding-left: 5px;
+}
+
+.attch {
+  display: block;
+  padding-top: 5px;
+}
+
+.attch-media {
+  float: left;
+  padding-right: 10px;
+}
+
+.attch-info {
+  font-size: 11px;
+  display: table;
+}
+
+.attch-name {
+  font-weight: bold;
+  padding-bottom: 2px;
+  color: #1B5998;
+}
+
+.attch-caption, .attch-desc {
+  padding-bottom: 2px;
+  color: gray;
+}
+
+.attch-media img {
+  width: 84px;
+  padding: 2px;
+  margin: 2px;
+  border: 1px solid #CCC;
+}
+
+.attch-media img:hover {
+  border: 1px solid #888;
+}
+
+.name, .event-link {
+  font-weight: bold;
+  color: #2351CC;
+}
+
+.time {
+  color: #888;
+  font-size: 11px;
+}
+
+.actions {
+  font-size: 11px;
+  padding-top: 2px;
+}
+
+.feedback {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.likes {
+  padding-top: 5px;
+  font-size: 11px;
+  background-image: url(../images/like.png);
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding-left: 23px;
+  background-color: #E6EAF2;
+  padding-bottom:5px;
+  margin-bottom: 1px;
+}
+
+.comments {
+  background-color: #E6EAF2;
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.comments li {
+  padding-left: 5px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+  padding-top: 2px;
+}
+
+.comments .show-more-comments {
+  background-image: url(../images/comments.png);
+  margin-left: 3px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+.comment-info {
+  padding-bottom: 2px;
+}
+
+.comment-name {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.comment-time {
+  float: right;
+  padding-right: 5px;
+  padding-top: 2px;
+  font-size: 10px;
+  color: #888;
+}
+
+.comment-msg {
+  font-size: 11px;
+}
+
+.post-comment {
+  height: 63px;
+}
+
+.post-comment textarea {
+  width: 271px;
+  margin-top: 3px;
+  margin-left: -1px;
+  border: 1px solid #BDC7D8;
+  resize: none;
+}
+
+#composer {
+  width: 338px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: 1px solid #BBBBBB;
+  background-color: #F2F2F2;
+  z-index: 99;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+#composer textarea {
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  resize: none;
+  font-size: 13px;
+  width: 257px;
+  height: 19px;
+  padding: 2px;
+  padding-top: 5px;
+  border: 1px solid #AAA;
+  color: #9C9C9C;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+#composer button {
+  float: right;
+}
+
+#fb, #fb-wall {
+  display: none;
+}
+
+#loading {
+  position: fixed;
+  top: 225px;
+  left: 250px;
+}
+
+.dummy {
+  clear: both;
+}
+
+.refresh-btn {
+  position: relative;
+  top: 12px;
+  left: 18px;
+  display: none;
+}
+
+.button {
+  position: absolute;
+  z-index: 1000;
+}
+
+.rotate {
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-transition: -webkit-transform 3s linear;
+}
+
+.pause {
+  -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  50% { -webkit-transform: rotate(180deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+span.login-btn:active {
+  background-position:left -210px
+}
+
+span.login-btn:active span{
+  border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none
+}
+
+span.login-btn {
+  -webkit-box-shadow: rgba(0,0,0, 0.0976562) 0px 1px 0px 0px;
+  background-color: #29447E;
+  background-image: url(../images/connect_sprite.png);
+  display: inline-block;
+  width: 150px;
+  font-size: 11px;
+  padding-left: 1px;
+  background-position: 0% -188px;
+  color: white;
+  font-weight: bold;
+}
+
+span.login-btn span {
+  background-image: url(../images/connect_sprite.png);
+  border-bottom: #29447E solid 1px;
+  border-top: #879AC0 solid 1px;
+  display: block;
+  height: 14px;
+  margin-left: 21px;
+  margin-right: 1px;
+  margin-top: 1px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+}
+
+#login {
+  margin-top: 30px;
+  margin-left: 50px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 325px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #CCC;
+}
+
+#login-btn-div {
+  margin: 15px auto;
+  display: block;
+  width: 140px;
+}
+
+span.blue-btn {
+  display: inline-block;
+  background-color: #5B74A8;
+  background-image: url(../images/buttonbkg.png);
+  background-position: 0px -48px;
+  border: 1px solid #29447E;
+  border-bottom: 1px solid #1A356E;
+  height: 25px;
+  line-height: 14px;
+  margin-left: 5px;
+  padding-top: 1px;
+}
+
+span.blue-btn:active {
+  background-image: none;
+  background-color: #4F6AA3;
+}
+
+span.comment-submit {
+  float: right;
+  margin-right: 5px;
+  height: 20px;
+  width: 64px;
+}
+
+span.comment-submit button {
+  font-size: 11px;
+  line-height: 11px;
+  padding-bottom: 7px;
+  padding-top: 0px;
+  padding-right: 2px;
+}
+
+#logout-btn {
+  margin-top: 165px;
+}
+
+#logout-btn span button {
+  font-size: 12px;
+  font-weight: normal;
+  width: 53px;
+  color: black;
+  padding-left: 6px;
+}
+
+#logout-btn span {
+  border: 1px solid #888;
+  background-position: 0px 0px;
+  margin-left: -5px;
+  -webkit-box-shadow: 0px 1px 1px #BEBEBE;
+}
+
+#logout-btn span:active {
+  background-image: none;
+  background-color: #CCC;
+}
+
+.show-more-comments {
+  font-size: 11px;
+  border-top: 2px solid #E6EAF2;
+}
+
+#notifications li {
+  background-repeat: no-repeat;
+}
+
+.notif-text {
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+#notifications li.unread {
+  background-color: #FFFBC4;
+}
+
+.post .message .subject {
+  font-weight: bold;
+}
+
+.post .message .name {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.post .message .snippet {
+  font-size: 11px;
+}
+
+.story.unread {
+  background-color: #EEEDF4;
+  margin-top: -5px;
+  padding-top: 5px;
+}
+
+.comment-pic {
+  padding-bottom: 2px;
+}
+
+.comment-pic img {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-left: -1px;
+  margin-top: 3px;
+}
+
+.comment-msg, .comment-info {
+  margin-left: 34px;
+}
+
+.comment-info {
+  margin-top: -1px;
+}
+
+#composer-btn {
+  float: right;
+  margin-right: 8px;
+}
