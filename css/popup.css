@@ -1,0 +1,535 @@
+/*
+ * StackExchangeNotifications 1.1.0
+ * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * Released under the MIT license
+ *
+ * https://github.com/brcontainer/stack-exchange-notification
+ */
+
+html, body {
+    width: 450px;
+}
+
+body.fix-popup {
+    width: 399px;
+}
+
+body {
+    background-color: #f6f6f6;
+    min-height: 400px;
+}
+
+.header {
+    padding: 1.6em 1.1em;
+    background-color: #fff;
+    font-size: 13px;
+    color: #646464;
+    text-transform: uppercase;
+    box-shadow: 0 2px 2px rgba(0, 0, 0,.04);
+    position: relative;
+}
+.header > :not(h3) {
+    display: none;
+}
+
+.nav {
+    background-color: rgba(255,255,255,0.02); /*fix driver video render bug firefox*/
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 52px;
+    left: 0;
+    top: 0;
+    padding: 1px;
+    margin: 0;
+    pointer-events: none;
+}
+
+.nav a {
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin: 4px 4px 0 4px;
+    position: relative;
+    text-decoration: none;
+    border-radius: 0.23em;
+    border: 1px transparent solid;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    pointer-events: auto;
+    outline: none;
+    transition: background-color 1s;
+}
+
+.nav a:first-child {
+    margin-right: 7px;
+}
+
+.nav a .icon {
+    background: center center no-repeat;
+    background-size: contain;
+    display: block;
+    height: 58%;
+    width: 58%;
+    margin: 21% auto 0 auto;
+}
+
+.nav a span.push {
+    position: absolute;
+    z-index: 100;
+    left: -5px;
+    top: -5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 8pt;
+    min-width: 8px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 6px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    border: 1px #911f28 solid;
+    border-radius: 11px;
+    background-color: #e23442;
+    background-image: linear-gradient(to bottom, #e8616c, #dd202f);
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.bg-sen {
+    width: 64px;
+    height: 64px;
+    border: 0.25em #F0EBEB solid;
+    border-radius: 4px;
+    margin: 0 auto;
+    -webkit-filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.8));
+            filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.8));
+}
+.bg-sen img {
+    position: relative;
+    top: 60%;
+    display: block;
+    margin: -25% auto 0 auto;
+    width: 70%;
+}
+
+#inbox-button {
+    background-color: #85E485;
+    border-color: #26AB26;
+}
+
+#about-button {
+    background-color: #E5E1E1;
+    border-color: #BBB3B3;
+}
+
+#achievements-button {
+    background-color: #88C6EF;
+    border-color: #3E84B3;
+}
+
+#chat-button {
+    background-color: #f5c816;
+    border-color: #c3a015;
+}
+
+#setup-button {
+    background-color: #C5C5C5;
+    border-color: #989897;
+    background-color: #ef6868;
+    border-color: #b72c2c;
+}
+
+#inbox-button:hover, #inbox-button:target {
+    background-color: #55D255;
+}
+
+#about-button:hover, #about-button:target {
+    background-color: #D8D4D4;
+}
+
+#achievements-button:hover, #achievements-button:target {
+    background-color: #68B0E0;
+}
+
+#chat-button:hover, #chat-button:target {
+    background-color: #e0b611;
+}
+
+#setup-button:hover, #setup-button:target {
+    background-color: #ea5d5d;
+}
+
+#inbox-button .icon {
+    background-image: url(../images/inbox.svg);
+}
+
+#about-button .icon {
+    background-image: url(../images/about.svg);
+}
+
+#achievements-button .icon {
+    background-image: url(../images/achievements.svg);
+}
+
+#chat-button .icon {
+    background-image: url(../images/chat.svg);
+}
+
+#setup-button .icon {
+    background-image: url(../images/gears.svg);
+}
+
+.tab-item .modal-content ul,
+.tab-item .modal-content li {
+    margin: 0;
+    padding: 0;
+}
+
+.tab-item .modal-content li .privileges-page {
+    width: 35px;
+    display: inline-block;
+}
+
+.utc-clock,
+.tab-item .modal-content li,
+.tab-item .modal-content div.date-group,
+.tab-item .modal-content .room {
+    border-top: 1px #cfcfcf solid;
+}
+
+.tab-item .modal-content li {
+    line-height: 16px;
+}
+
+.tab-item .modal-content li:last-child {
+    border-bottom: none;
+}
+
+/*.tab-item .modal-content li:hover*/
+.tab-item .modal-content li.unread-item {
+    border-top-color: #BECFE8;
+    background-color: #E7EFF9;
+}
+.tab-item .modal-content li:hover,
+.tab-item .modal-content .room:hover {
+    border-top-color: #BECFE8;
+    background-color: #D6E1ED;
+}
+.tab-item .modal-content li a,
+.tab-item .modal-content .room > a {
+    padding: 0.65em 0.25em 0.65em 0.55em;
+    text-decoration: none;
+    display: block;
+}
+
+.tab-item .modal-content .more-rooms {
+    padding: 20px 0;
+    white-space: nowrap;
+    font-size: 0;
+}
+.tab-item .modal-content .more-rooms > a {
+    border: 1px #bdb9b9 solid;
+    color: #bdb9b9;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    min-width: 100px;
+    font-size: 9pt;
+    text-decoration: none;
+    text-shadow: none;
+}
+.tab-item .modal-content .more-rooms > a:first-child {
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.tab-item .modal-content .more-rooms > a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.tab-item .modal-content .more-rooms > a:hover {
+    background-color: #e2d7d7;
+    color: #fff;
+}
+
+.tab-item .modal-content li.inbox-se-link, .utc-clock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 1px rgba(0, 0, 0, 0.08);
+}
+
+.tab-item .modal-content li.inbox-se-link:hover {
+    background-color: #fcfcfc;
+}
+.tab-item .modal-content::after {
+    visibility: hidden;
+    padding: 13px 0 14px 0;
+    content: "W";
+    display: block;
+}
+
+.tab-item .modal-content li.inbox-se-link a, .utc-clock {
+    padding: 16px 0;
+    text-align: center;
+    font-size: 9pt;
+}
+
+.utc-clock {
+    letter-spacing: normal;
+    font-weight: normal;
+    font-size: 7pt;
+}
+
+.date-group-toggle-row {
+    padding: 0.8em 0.5em;
+    background-color: #fafafa;
+}
+.date-group:first-child .date-group-toggle-row {
+    padding-top: 2em;
+}
+
+.tab-item .site-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.tab-item .item-location,
+.tab-item .message-text h4 {
+    font-weight: normal;
+    color: #142877;
+}
+
+.tab-item .item-location {
+    padding: 0.8em 0;
+}
+
+.tab-item .item-summary {
+    padding-left: 0.8em;
+}
+
+.tab-item .rep-site,
+.tab-item .rep-change,
+.tab-item .item-content,
+.tab-item .message-text,
+.tab-item .achievements-badge {
+    display: inline-block;
+    vertical-align: top;
+}
+.tab-item .rep-change,
+.tab-item .achievements-badge {
+    text-align: right;
+    width: 35px;
+}
+.tab-item .rep-site .rep-change {
+    text-align: left;
+}
+
+.tab-item .item-content {
+    width: 340px;
+}
+.tab-item .message-text {
+    width: 300px;
+}
+
+.achievements-dialog .date-header,
+.achievements-dialog .single-rep-site-container,
+.tab-item .rep-change {
+    font-weight: bold;
+}
+
+.tab-item .rep-down {
+    color: #E20000;
+}
+.tab-item .rep-up {
+    color: #79B892;
+}
+
+.tab-item .rep-site a {
+    text-decoration: none;
+}
+
+.tab-item .rep-site-container {
+    padding-top: 0.8em;
+    display: block;
+}
+
+.tab-item .badge1,
+.tab-item .badge2,
+.tab-item .badge3 {
+    background-color: #fc0;
+    display: inline-block;
+    overflow: hidden;
+    line-height: inherit;
+    vertical-align: text-bottom;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.tab-item .badge2 {
+    background-color: #c5c5c5;
+}
+.tab-item .badge3 {
+    background-color: #c96;
+}
+
+#about-content {
+    color: #4F4949;
+    text-shadow: 0 1px 0 #fff;
+    text-align: center;
+}
+#about-content a {
+    text-decoration: none;
+}
+
+#about-content a:hover, .inbox-se-link a:hover, .utc-clock {
+    color: #AD9B9B;
+}
+#about-content h1,
+#about-content h2 {
+    padding: 10px 0;
+}
+#about-content h3 {
+    color: #4F4949;
+}
+#about-content ul {
+    width: 240px;
+    padding: 0.8em 0;
+    margin: 0 auto;
+}
+
+.about {
+    padding: 60px 0.25em 0.55em 0.55em;
+}
+
+.about p {
+    padding: 2px 0;
+}
+.about p:last-child {
+    padding: 15px 0;
+}
+
+.about-icon {
+    width: 88px;
+    height: 88px;
+    margin: 5px auto;
+    border-color: rgb(208, 190, 190);
+}
+
+.setup {
+    padding: 10px 0 15px 0;
+}
+
+.setup h2 {
+    font-size: 10pt;
+    padding: 1.1em;
+    text-transform: uppercase;
+}
+.tab-item .modal-content .room {
+    min-height: 42px;
+}
+.tab-item .modal-content .room-fav {
+    display: block;
+    padding: 15px 0;
+}
+.tab-item .modal-content .room::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.tab-item .modal-content .room > a {
+    box-sizing: border-box;
+    float: left;
+    width: 360px;
+}
+.tab-item .modal-content .room > a > .icon {
+    float: left;
+    width: 32px;
+}
+.tab-item .modal-content .room .content {
+    margin-left: 36px;
+}
+.tab-item .modal-content .room .icon,
+.tab-item .modal-content .room .close,
+.tab-item .modal-content .room .content p {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    height: 36px;
+}
+.tab-item .modal-content .room .close {
+    margin-top: 0.65em;
+    float: right;
+    width: 38px;
+    text-align: center;
+    display: none;
+}
+.tab-item .modal-content .room:hover .close {
+    display: flex;
+}
+.tab-item .modal-content .room .close > .icon {
+    background-color: #b7b5ad;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+}
+
+.tab-item .modal-content .room .close > .icon::before {
+    border-radius: 100%;
+    display: inline-block;
+    content: "Remove chat";
+    width: 24px;
+    height: 12px;
+    background: url(../images/close.svg) center center no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    text-indent: -1000px;
+}
+
+.fav-icon {
+    background: url(../images/heart.svg#gray) center center no-repeat;
+    vertical-align: text-bottom;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+}
+
+.about .bug-icon {
+    margin-right: 5px;
+}
+
+@-moz-document url-prefix() {
+    html, body {
+        height: 600px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .field {
+        padding-right: 24px !important;
+    }
+
+    select.field {
+        background-position: 360px center !important;
+    }
+
+    @media (max-device-height: 600px)
+    {
+        html, body {
+            height: 480px;
+        }
+    }
+}
+
+@media (min-width: 600px)
+{
+    html, body {
+        max-height: initial;
+        height: auto;
+        width: auto;
+    }
+}

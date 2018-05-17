@@ -1,53 +1,110 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <script type='text/javascript' src='https://api.stackexchange.com/js/2.0/all.js'></script>
-
     <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+   <title>StackFire</title>
+   <link rel="icon" type="image/png" href="../images/icon.png">
+   <link rel="stylesheet" type="text/css" href="../css/global.css">
+   <link rel="stylesheet" type="text/css" href="../css/popup.css">
+   <link rel="stylesheet" type="text/css" href="../css/setup.css">
+   <link rel="stylesheet" type="text/css" href="../css/switch.css">
+   <link rel="stylesheet" type="text/css" href="../css/animate.css">
+<link rel="stylesheet" type="text/css" href="../css/dialog.css">
     <title></title>
   </head>
   <body>
     <h1>Stackfire</h1>
-<button type="button" class="login-button" name="button">Login</button>
+    <div class="nav">
+            <a title="Show About" id="about-button" href="#about-button">
+                <i class="icon">&nbsp;</i>
+            </a>
+            <a title="Setup" id="setup-button" href="#setup-button">
+                <i class="icon">&nbsp;</i>
+            </a>
+            <a title="Linked chat" id="chat-button" href="#chat-button">
+                <i class="icon">&nbsp;</i>
+            </a>
+            <a title="Show Achievements" id="achievements-button" href="#achievements-button">
+                <span class="push hide">0</span>
+                <i class="icon">&nbsp;</i>
+            </a>
+            <a title="Show Inbox" id="inbox-button" href="#inbox-button">
+                <span class="push hide">0</span>
+                <i class="icon">&nbsp;</i>
+            </a>
+        </div>
 
-<script type='text/javascript'>
+        <div id="setup-content" class="tab-item hide">
+            <div id="setup-inner"></div>
+        </div>
 
-$(function(){
+        <div class="tab-item hide" id="chat-content">
+            <div class="header">
+                <h3>Chat rooms</h3>
+            </div>
+            <div class="modal-content rooms">
+                <div class="notice hide">
+                    You have no rooms added<br>
+                    <div class="room-fav">
+                        <i class="fav-icon"></i>
+                    </div>
+                    see more rooms from:
+                    <div class="more-rooms">
+                        <a href="https://chat.stackoverflow.com/?tab=all&amp;sort=people">
+                            stack overflow
+                        </a>
+                        <a href="https://chat.stackexchange.com/?tab=all&amp;sort=people">
+                            Others
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-SE.init({
+        <div class="tab-item hide" id="inbox-content"></div>
 
-    clientId: 12447,
-    key: 'ptRplwVuSVmdx*I3XC*CmQ((',
+        <div class="tab-item hide" id="achievements-content"></div>
 
-    channelUrl: 'https://api.stackexchange.com/docs/proxy',
+        <div class="tab-item" id="about-content">
+            <div class="about">
+                <div class="about-icon bg-sen">
+                    <img src="stack.png">
+                </div>
 
-    complete: function(data) {
-        $('#login-button')
-            .removeAttr('disabled')
-            .text('Run Example With Version '+data.version);
-    }
-});
+                <h1 id="about-title">&nbsp;</h1>
+                
+
+                <hr>
+
+                <h2>Thanks to</h2>
 
 
-$('#login-button').click(function() {
-  
 
-    SE.authenticate({
-        success: function(data) {
-            alert(
-                'User Authorized with account id = ' +
-                data.networkUsers[0].account_id + ', got access token = ' +
-                data.accessToken
-            );
-        },
-        error: function(data) {
-            alert('An error occurred:\n' + data.errorName + '\n' + data.errorMessage);
-        },
-        networkUsers: true
-    });
-});
-});
-</script>
+            </div>
+        </div>
+
+        <div class="dialog hide">
+            <div class="modal">
+                <div class="content"></div>
+                <div class="act alert hide">
+                    <button>Ok</button>
+                </div>
+                <div class="act confirm hide">
+                    <button>Confirm</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+  <script type="text/javascript" src="../js/stackexchangenotifications.js"></script>
+  <script type="text/javascript" src="../js/extends.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/popoup.js"></script>
+<script type="text/javascript" src="../js/dialog.js"></script>
 
 
   </body>

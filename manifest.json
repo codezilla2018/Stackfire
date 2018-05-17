@@ -1,25 +1,59 @@
-
-
 {
+    "name": "StackFire",
+    "version": "1.1.0",
+    "manifest_version": 2,
+    "description": "Satck overflow",
+    "icons": {
+        "128": "stack.png",
+        "48":  "stack.png",
+        "32":  "stack.png",
+        "16":  "stack.png"
+    },
+    "browser_action": {
+        "default_icon":  "stack.png",
+        "default_popup": "popup.html"
+    },
+    "options_ui": {
+        "page": "options.html"
+    },
+    "background": {
+        "scripts": [
+            "js/stackexchangenotifications.js",
+            "js/extends.js",
+            "js/bg.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": [
 
-  "manifest_version": 2,
-  "name": "Stackfire",
-  "version": "1.0",
+            "*://stackoverflow.com/*"
 
-  "description": "This is a Stackoverflow Firefox Extension",
-  "browser_action": {
-    "default_icon": "stack.png",
-    "default_title": "Stackfire",
-    "default_popup": "popup.html"
-  },
-  "icons": {
-    "48": "stack.png"
-  },
+        ],
+        "js": [
+            "js/extends.js",
+            "js/dc.js",
+            "js/gallery.js",
+            "js/editor.js",
+            "js/extras.js"
+        ]
+    }, {
+        "matches": [
 
-  "content_scripts": [
-    {
+            "*://chat.stackoverflow.com/*",
+            "*://chat.meta.stackoverflow.com/*"
 
-    }
-  ]
-
+        ],
+        "js": [
+            "js/pinchat.js"
+        ]
+    }],
+    "web_accessible_resources": [
+        "css/*",
+        "images/*"
+    ],
+    "permissions": [
+        "*://stackexchange.com/*",
+        "*://*.sstatic.net/*",
+        "tabs"
+    ]
 }

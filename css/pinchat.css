@@ -1,0 +1,35 @@
+/*
+ * StackExchangeNotifications 1.1.0
+ * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * Released under the MIT license
+ *
+ * https://github.com/brcontainer/stack-exchange-notification
+ */
+
+a.sen-btn-pin > i.sen-inroom-heart-icon {
+    background: url(../images/heart.svg#red) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    perspective: 1000;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform ease-out 1s;
+}
+
+a.sen-btn-pin:hover > i.sen-inroom-heart-icon {
+    transform: rotateY(-180deg);
+}
+
+a.sen-btn-pin > i.sen-inroom-heart-icon {
+    width: 10px;
+    height: 10px;
+}
+a.sen-btn-pin::after {
+    content: " save room";
+}
+a.sen-btn-pin.sen-added::after {
+    content: " remove room";
+}
