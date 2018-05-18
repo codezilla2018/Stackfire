@@ -1,10 +1,4 @@
-/*
- * StackExchangeNotifications 1.1.0
- * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
- * Released under the MIT license
- *
- * https://github.com/brcontainer/stack-exchange-notification
- */
+
 
 (function (w, d, u) {
     "use strict";
@@ -34,7 +28,6 @@
         setupButton         = d.getElementById("setup-button"),
         setupContent        = d.getElementById("setup-content"),
 
-        //notificationSwitch  = d.getElementById("notification-switch"),
 
         editorSwitch        = d.getElementById("editor-switch"),
         editorSwitchTabs    = d.getElementById("editor-switch-tabs"),
@@ -247,12 +240,6 @@
     function bgCss()
     {
         if (cssLoaded) {
-            /*browser.runtime.sendMessage({ "storeimages": true }, function (response) {
-                if (response) {
-                    setStyle(response);
-                }
-            });*/
-
             return;
         }
 
@@ -342,7 +329,7 @@
         }
 
         if (inboxXhr) {
-            inboxXhr.abort();
+            reputaionXhr.abort();
         }
 
         if (achievementsXhr) {
@@ -448,7 +435,7 @@
                     '<div class="sen-error notice">',
                     'Response error:<br>',
                     'You must be logged in to <br>',
-                    '<a href="https://stackexchange.com/">https://stackexchange.com</a>',
+                    '<a href="https://stackoverflow.com/">https://stackoverflow.com</a>',
                     '</div>'
                 ].join("");
             } else if (data.indexOf("<") !== -1) {
@@ -509,7 +496,7 @@
                     '<div class="sen-error notice">',
                     'Response error:<br>',
                     'You must be logged in to <br>',
-                    '<a href="https://stackexchange.com/">https://stackexchange.com</a>',
+                    '<a href="https://stackoverflow.com/">https://stackoverflow.com</a>',
                     '</div>'
                 ].join("");
             } else if (data.indexOf("<") !== -1) {

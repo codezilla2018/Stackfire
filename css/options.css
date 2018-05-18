@@ -1,122 +1,117 @@
-/*
- * StackExchangeNotifications 1.1.0
- * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
- * Released under the MIT license
- *
- * https://github.com/brcontainer/stack-exchange-notification
- */
-
 body {
-    background: #f9f9f9;
+    background-color: #f7f1f0 !important;
+    background-size: 90% auto !important;
 }
 
-.setup-header {
-    position: relative;
-    margin: 0 10px 10px 10px;
-    padding: 15px 10px;
-    font-size: 12pt;
-    border-bottom: 1px solid;
-    text-transform: uppercase;
-}
-.setup-header .ico {
-    background: url(../images/gears.svg#gray) right center no-repeat;
-    background-size: contain;
-    display: inline-block;
-    vertical-align: bottom;
-    height: 24px;
-    width: 24px;
+body.horror {
+    background: #262b30 url(../../../images/pumpkins.svg#clear) center center fixed no-repeat !important;
+    background-size: 90% auto !important;
 }
 
-.setup-header::after, .setup-header::before {
-    bottom: -1px;
-    left: 19px;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
+body,
+a,
+#about-content,
+select.field,
+.utc-clock,
+.notice,
+.tab-item .item-location,
+.tab-item .message-text h4 {
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+select.field {
+    background-image: url(../../../images/arrow.svg#white);
+}
+
+hr {
+    border-color: #4f5154 !important;
+}
+
+.utc-clock,
+.tab-item
+.modal-content li,
+.tab-item .modal-content div.date-group,
+.tab-item .modal-content .room {
+    border-color: #111215 !important;
+}
+
+.tab-item .modal-content li.inbox-se-link,
+.tab-item .modal-content li.inbox-se-link:hover,
+.utc-clock {
+    background-color: #646464 !important;
+}
+
+.tab-item .modal-content li.unread-item {
+    background-color: #2e5682 !important;
+}
+
+.tab-item .modal-content li:hover,
+.tab-item .modal-content .room:hover {
+    background-color: rgba(51, 61, 72, 0.9) !important;
+}
+
+.tab-item .modal-content .room:hover .close > .icon {
+    background-color: #2f2e2a !important;
+}
+
+.header {
+    background-color: #646464 !important;
+    color: #fff !important;
+}
+
+.tab-item .modal-content .more-rooms > a {
+    border-color: #606065 !important;
+}
+
+.btn,
+.field,
+.date-group-toggle-row,
+.tab-item .modal-content .more-rooms > a:hover {
+    background-color: #35404a !important;
+}
+
+.field, select.field, .btn, .group {
+    border-color: #272525 !important;
+}
+
+.btn:focus, body > .dialog > .modal {
+    background-color: #333d48 !important;
+    color: #cfcfcf !important;
+}
+
+body.horror > .dialog > .modal > .confirm > button:first-child {
+    background-color: #da7137 !important;
+}
+
+.nav a {
+    border-color: transparent;
+}
+
+.bg-stack {
+    -webkit-filter: none;
+            filter: none;
+}
+
+.setup-header{
+    border-color: #404e5a !important
 }
 
 .setup-header::after {
-    border-color: rgba(250, 247, 247, 0);
-    border-bottom-color: #faf7f7;
-    border-width: 5px;
-    margin-left: -5px;
+    border-bottom-color: #262b30;
 }
 
 .setup-header::before {
-    border-color: rgba(222, 218, 218, 0);
-    border-bottom-color: #dedada;
-    border-width: 6px;
-    margin-left: -6px;
+    border-bottom-color: #404e5a;
+}
+.setup-header .ico {
+    background-image: url(../../../images/gears.svg);
 }
 
-.group {
-    margin: 0 12px 18px 12px;
-    border: 1px solid;
-    overflow: hidden;
-    border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+::-webkit-scrollbar {
+    background-color: #907979;
 }
 
-.group-btns {
-    margin: 25px auto 0 auto;
-    width: 600px;
-    text-align: center;
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.85);
 }
-
-.group-btns .btn {
-    box-sizing: border-box !important;
-    border-width: 0 !important;
-    width: 50%;
-}
-
-.group-btns .btn:first-child {
-    border-right-width: 1px !important;
-    float: left;
-}
-
-.group-btns .btn:last-child {
-    float: right;
-}
-
-.group-btns::after {
-    content: "";
-    display: block;
-    height: 0;
-}
-
-.field, .btn {
-    padding-left: .7em;
-}
-
-.field .label {
-    margin-left: 12px;
-    display: inline-block;
-    float: none;
-}
-
-.field a[data-switch] {
-    float: left;
-}
-
-#version {
-    padding: 15px 0;
-    text-align: center;
-}
-
-/*
-@media (min-width: 390px)
-{
-    .setup-header::after, .setup-header::before {
-        display: none;
-    }
-
-    @-moz-document url-prefix() {
-        body {
-            background-color: transparent;
-        }
-    }
-}
-*/

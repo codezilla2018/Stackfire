@@ -1,31 +1,25 @@
-/*
- * StackExchangeNotifications 1.1.0
- * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
- * Released under the MIT license
- *
- * https://github.com/brcontainer/stack-exchange-notification
- */
 
-.sen-bg-loader {
+
+.stack-bg-loader {
     background: url(../images/spiner.svg) center center no-repeat;
     background-size: 32px 32px;
     overflow: hidden;
-    -webkit-animation: SenSpinLoader .5s linear infinite;
-       -moz-animation: SenSpinLoader .5s linear infinite;
-            animation: SenSpinLoader .5s linear infinite;
+    -webkit-animation: stackSpinLoader .5s linear infinite;
+       -moz-animation: stackSpinLoader .5s linear infinite;
+            animation: stackSpinLoader .5s linear infinite;
 }
 
-@-moz-keyframes SenSpinLoader {
+@-moz-keyframes stackSpinLoader {
     100% {
         -moz-transform: rotate(360deg);
     }
 }
-@-webkit-keyframes SenSpinLoader {
+@-webkit-keyframes stackSpinLoader {
     100% {
         -webkit-transform: rotate(360deg);
     }
 }
-@keyframes SenSpinLoader {
+@keyframes stackSpinLoader {
     100% {
         -webkit-transform: rotate(360deg);
                 transform: rotate(360deg);

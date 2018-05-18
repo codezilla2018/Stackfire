@@ -1,12 +1,6 @@
-/*
- * StackExchangeNotifications 1.1.0
- * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
- * Released under the MIT license
- *
- * https://github.com/brcontainer/stack-exchange-notification
- */
 
-a.sen-btn-pin > i.sen-inroom-heart-icon {
+
+a.stack-btn-pin > i.stack-inroom-heart-icon {
     background: url(../images/heart.svg#red) no-repeat;
     background-size: contain;
     vertical-align: middle;
@@ -19,17 +13,17 @@ a.sen-btn-pin > i.sen-inroom-heart-icon {
     transition: transform ease-out 1s;
 }
 
-a.sen-btn-pin:hover > i.sen-inroom-heart-icon {
+a.stack-btn-pin:hover > i.stack-inroom-heart-icon {
     transform: rotateY(-180deg);
 }
 
-a.sen-btn-pin > i.sen-inroom-heart-icon {
+a.stack-btn-pin > i.stack-inroom-heart-icon {
     width: 10px;
     height: 10px;
 }
-a.sen-btn-pin::after {
+a.stack-btn-pin::after {
     content: " save room";
 }
-a.sen-btn-pin.sen-added::after {
+a.stack-btn-pin.stack-added::after {
     content: " remove room";
 }

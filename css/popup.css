@@ -1,21 +1,15 @@
-/*
- * StackExchangeNotifications 1.1.0
- * Copyright (c) 2017 Guilherme Nascimento (brcontainer@yahoo.com.br)
- * Released under the MIT license
- *
- * https://github.com/brcontainer/stack-exchange-notification
- */
+
 
 html, body {
     width: 450px;
 }
 
 body.fix-popup {
-    width: 399px;
+    width: 400px;
 }
 
 body {
-    background-color: #f6f6f6;
+    background-color: #E5E1E1;
     min-height: 400px;
 }
 
@@ -33,7 +27,7 @@ body {
 }
 
 .nav {
-    background-color: rgba(255,255,255,0.02); /*fix driver video render bug firefox*/
+    background-color: rgba(255,255,255,0.02);
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -43,6 +37,7 @@ body {
     padding: 1px;
     margin: 0;
     pointer-events: none;
+    display:block;
 }
 
 .nav a {
@@ -58,6 +53,7 @@ body {
     pointer-events: auto;
     outline: none;
     transition: background-color 1s;
+    display:block;
 }
 
 .nav a:first-child {
@@ -78,7 +74,7 @@ body {
     z-index: 100;
     left: -5px;
     top: -5px;
-    display: inline-block;
+    display: inside;
     text-align: center;
     font-size: 8pt;
     min-width: 8px;
@@ -94,7 +90,7 @@ body {
     box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
 }
 
-.bg-sen {
+.bg-stack {
     width: 64px;
     height: 64px;
     border: 0.25em #F0EBEB solid;
@@ -103,7 +99,7 @@ body {
     -webkit-filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.8));
             filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.8));
 }
-.bg-sen img {
+.bg-stack img {
     position: relative;
     top: 60%;
     display: block;
@@ -117,7 +113,7 @@ body {
 }
 
 #about-button {
-    background-color: #E5E1E1;
+    background-color: #000000;
     border-color: #BBB3B3;
 }
 
@@ -171,7 +167,7 @@ body {
 }
 
 #chat-button .icon {
-    background-image: url(../images/chat.svg);
+    background-image: url(../images/reputaion.png);
 }
 
 #setup-button .icon {
