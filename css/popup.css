@@ -127,12 +127,12 @@ body {
     border-color: #c3a015;
 }
 
-#setup-button {
+/* #setup-button {
     background-color: #C5C5C5;
     border-color: #989897;
     background-color: #ef6868;
     border-color: #b72c2c;
-}
+} */
 
 #inbox-button:hover, #inbox-button:target {
     background-color: #55D255;
@@ -150,29 +150,29 @@ body {
     background-color: #e0b611;
 }
 
-#setup-button:hover, #setup-button:target {
+/* #setup-button:hover, #setup-button:target {
     background-color: #ea5d5d;
-}
+} */
 
 #inbox-button .icon {
-    background-image: url(../images/inbox.svg);
+    background-image: url(../images/inbox.png);
 }
 
 #about-button .icon {
-    background-image: url(../images/about.svg);
+    background-image: url(../images/about.png);
 }
 
 #achievements-button .icon {
-    background-image: url(../images/achievements.svg);
+    background-image: url(../images/achievements.png);
 }
 
 #chat-button .icon {
     background-image: url(../images/reputaion.png);
 }
 
-#setup-button .icon {
+/* #setup-button .icon {
     background-image: url(../images/gears.svg);
-}
+} */
 
 .tab-item .modal-content ul,
 .tab-item .modal-content li {

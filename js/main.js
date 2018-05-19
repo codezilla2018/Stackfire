@@ -20,7 +20,7 @@
         var enabled = StackExchangeNotifications.switchEnable("dark_theme");
 
         if (enabled) {
-            if (true) {
+            if (!theme) {
                 theme = StackExchangeNotifications.utils.resourceStyle("themes/dark/options");
             } else {
                 theme.disabled = false;

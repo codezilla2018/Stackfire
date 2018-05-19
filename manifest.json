@@ -20,7 +20,7 @@
         "scripts": [
             "js/stackexchangenotifications.js",
             "js/extends.js",
-            "js/bg.js"
+            "js/background.js"
         ]
     },
     "content_scripts": [{
@@ -31,7 +31,7 @@
         ],
         "js": [
             "js/extends.js",
-            "js/dc.js",
+            "js/detectchanges.js",
             "js/gallery.js",
             "js/editor.js",
             "js/extras.js"
