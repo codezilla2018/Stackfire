@@ -3,8 +3,8 @@
 (function (w, d, u) {
     "use strict";
 
-    var delay = 60, //In seconds
-        initiateDelay = 5000; //Milliseconds
+    var delay = 60,
+        initiateDelay = 5000;
 
     var unreadCountsURI = "https://stackoverflow.com/topbar/get-unread-counts",
         achievementsURI = "https://stackoverflow.com/topbar/achievements",
@@ -196,8 +196,6 @@
     function retrieveData()
     {
         var total = 0;
-
-        //If updateByInjected = true retest if closed
         browser.tabs.query({ url: "https://*/*" }, function (tabs) {
             for (var i = tabs.length - 1; i >= 0; i--) {
                 if (sitesRE.test(tabs[i].url)) {
@@ -207,10 +205,7 @@
             }
 
             if (total === 0) {
-                /*
-                 * Disable StackExchangeNotifications.detectDOM if there are
-                 * no more tabs of sites in the SE network
-                 */
+
                 noNeedRequestXhr = false;
             }
 
@@ -242,7 +237,7 @@
         var currentDelay = 1000 * delay;
 
         if (code !== 200) {
-            //If the internet access fails uses a smaller delay
+
             currentDelay = 1000;
         } else if (typeof response === "string") {
             var data;
@@ -298,11 +293,10 @@
 
     w.StackExchangeNotifications = {
         "boot": function () {
-            //Improve performance in Opera and older machines
+
             setTimeout(function () {
                 initiateDelay = 1;
-                //StackExchangeNotifications.inbox();
-                //StackExchangeNotifications.achievements();
+
             }, initiateDelay);
 
             if (SimpleCache.get("firstrun2", true)) {

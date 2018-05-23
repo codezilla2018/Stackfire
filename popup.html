@@ -2,14 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
-   <title>StackFire</title>
 
+   <meta name="viewport" content="width=device-width, initial-scale=0, minimum-scale=0, maximum-scale=1, user-scalable=0">
+   <title>StackFire</title>
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
    <link rel="stylesheet" type="text/css" href="../css/global.css">
    <link rel="stylesheet" type="text/css" href="../css/popup.css">
    <link rel="stylesheet" type="text/css" href="../css/setup.css">
    <link rel="stylesheet" type="text/css" href="../css/switch.css">
    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+
 <link rel="stylesheet" type="text/css" href="../css/dialog.css">
     <title></title>
   </head>
@@ -19,7 +21,7 @@
       <a title="Setup" id="setup-button" href="#setup-button">
           <i class="icon">&nbsp;</i>
       </a>
-            <a title="Show About" id="about-button" href="#about-button">
+            <a title="Show About" id="about-button" href="#">
                 <i class="icon">&nbsp;</i>
             </a>
 
@@ -43,10 +45,23 @@
 
         <div class="tab-item hide" id="chat-content">
             <div class="header">
-                <h3>Reputauion</h3>
+                <h3 style="float:left">Badges & Reputauion</h3>
             </div>
             <div class="modal-content rooms" >
+                <div id="rep">
+                  <center>
 
+                  <h1 style="float:center;font-size:20px">Badges</h1><br>
+                  <button style="background-color:#FFDF00;width:90%;height:50px;opacity: 0.8;float:center;padding: 15px 32px; text-align: center;"type="button" id="gold" disabled><img src="../images/gold.png" style="float:left;height:25px;" ><font color="black">Gold Badges</font>  </button><br>
+                  <button style="background-color:#C0C0C0;width:90%;height:50px;opacity: 0.8;float:center;padding: 15px 32px; text-align: center;"type="button" id="silver" disabled><img src="../images/silver.png" style="float:left;height:25px;"><font color="black">Silver Badges</font>  </button><br>
+                  <button style="background-color:#C9AE5D;width:90%;height:50px;opacity: 0.8;float:center;padding: 15px 32px; text-align: center;"type="button" id="bronze" disabled><img src="../images/bronze.png" style="float:left;height:25px;"><font color="black">Bronze Badges</font>  </button><br>
+
+                  <br><br>
+                  <h1 style="float:center;font-size:20px"><b>Reputauion<b></h1><br>
+                  <button id="repu" style="background-color: #ffffff;border: solid; font-size: 50px;padding: 70px;border-radius: 50%;"><img src="../images/repui.png" style="float:top center"></button>
+                </center>
+
+                </div>
             </div>
         </div>
 
@@ -55,17 +70,39 @@
         <div class="tab-item hide" id="achievements-content"></div>
 
         <div class="tab-item" id="about-content">
+          <div class="header">
+              <h3>Profile Information</h3>
+          </div>
+
             <div class="about">
-                <div class="about-icon bg-stack">
-                    <img src="stack.png">
-                </div>
+              <div id="w">
+                  <img id="myimg" height="150px" width="150px" src="stack.png"><br>
+                <div id="demo">
+                  <span id="a" style="border: 5px; border-radius: 16px; font-size: 16px;"></span><br>
+                  <span id="b" style="border: 5px; border-radius: 16px; font-size: 16px;"></span><br>
+                  <span id="c" style="border: 5px; border-radius: 16px; font-size: 16px;"></span><br><br>
+                  <span id="e" style="border: 5px; border-radius: 16px; font-size: 24px;"></span>
+                  <span id="f" style="border: 5px; border-radius: 16px; font-size: 24px;"></span>
+
+
+
+              </div>
+              <div id="qus">
+
+              </div>
+              </div>
+
+
+
+
 
                 <h1 id="about-title">&nbsp;</h1>
 
 
                 <hr>
 
-                <h2>Thanks to</h2>
+                <h2>StackFire for Codezilla</h2>
+
 
 
 
@@ -89,12 +126,13 @@
 
 
   <script type="text/javascript" src="../js/stackexchangenotifications.js"></script>
-  <script type="text/javascript" src="../js/extends.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
+
   <script type="text/javascript" src="../js/pop.js"></script>
-  <script type="text/javascript" src="../js/dialog.js"></script>
+
+  <script type="text/javascript" src="det.js"></script>
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 
 
-</script>
+
   </body>
 </html>

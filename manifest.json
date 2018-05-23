@@ -30,17 +30,14 @@
 
         ],
         "js": [
-            "js/extends.js",
-            "js/detectchanges.js",
-            "js/gallery.js",
-            "js/editor.js",
-            "js/extras.js"
+
+            "det.js"
         ]
     }, {
         "matches": [
 
             "*://chat.stackoverflow.com/*",
-            "*://chat.meta.stackoverflow.com/*"
+            "*://api.stackexchange.com/*"
 
         ],
         "js": [
@@ -52,8 +49,10 @@
         "images/*"
     ],
     "permissions": [
-        "*://stackexchange.com/*",
+        "*://api.stackexchange.com/*",
+        "*://stackoverflow.com/*",
         "*://*.sstatic.net/*",
         "tabs"
+
     ]
 }
