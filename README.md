@@ -31,7 +31,6 @@ In the **INBOX** and **Achievements** tabs they show your achievements and the i
 <p align="center">
   <img src="https://user-images.githubusercontent.com/31571237/40469588-b8043ea4-5f4e-11e8-8d2b-adcf2aa9e8e1.png" width="350"/><br>
   <img src="https://user-images.githubusercontent.com/31571237/40469589-b83d6f62-5f4e-11e8-839e-cca6f59be8e7.png" width="350"/><br>
-  <img src="https://user-images.githubusercontent.com/31571237/40469590-b8770006-5f4e-11e8-84b2-cecbc7e87ea3.png
-" width="350"/><br>
+  <img src="https://user-images.githubusercontent.com/31571237/40469590-b8770006-5f4e-11e8-84b2-cecbc7e87ea3.png" width="350"/><br>
   <img src="https://user-images.githubusercontent.com/31571237/40469595-b8e384e2-5f4e-11e8-927e-fab467b288fb.png" width="350"/><br>
 </p>
