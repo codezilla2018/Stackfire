@@ -19,7 +19,6 @@
     "background": {
         "scripts": [
             "js/stackexchangenotifications.js",
-            "js/extends.js",
             "js/background.js"
         ]
     },
@@ -41,7 +40,7 @@
 
         ],
         "js": [
-            "js/pinchat.js"
+
         ]
     }],
     "web_accessible_resources": [
