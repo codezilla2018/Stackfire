@@ -27,3 +27,8 @@ In the **PROFILE INFORMATION** tab it shows some details of the userid that you 
 In the **BADGES & REPUTATION** it shows the badges count and as well as the reputation of the user. it also fetch from the user id.
 
 In the **INBOX** and **Achievements** tabs they show your achievements and the inbox contetnt. https://stackoverflow.com/topbar/achievements and https://stackoverflow.com/topbar/inbox provide the achievements and the inbox of the user of the browser. so to fetch the data. The user needs to login to the stackoverflow using the firefox as these data will fetch from the tabs.
+
+https://user-images.githubusercontent.com/31571237/40469588-b8043ea4-5f4e-11e8-8d2b-adcf2aa9e8e1.png
+https://user-images.githubusercontent.com/31571237/40469589-b83d6f62-5f4e-11e8-839e-cca6f59be8e7.png
+https://user-images.githubusercontent.com/31571237/40469590-b8770006-5f4e-11e8-84b2-cecbc7e87ea3.png
+https://user-images.githubusercontent.com/31571237/40469595-b8e384e2-5f4e-11e8-927e-fab467b288fb.png
